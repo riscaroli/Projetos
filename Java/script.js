@@ -18,7 +18,7 @@ const z = 20  //<-- Não muda de valor de preferência este
 
 // Tipos de dados
 
-const name = "Gabriel"
+const nome = "Gabriel"
 
 const true_or_false = true
 
@@ -26,12 +26,22 @@ let surprise = null
 
 let age //<-- Incorreto
 
-console.log(typeof name) //<-- Validação
+const lista = ["Gabriel","Crislei","Luciano"]
 
-console.log(typeof z) //<-- Validação
+const usuario = {email: "gabriel.riscarolli@unidavi.edu.br", password: "teste123", age: 30} //<-- Object literals
 
-console.log(typeof true_or_false) //<-- Validação
+console.log(typeof nome) //<-- Validação String
 
-console.log(typeof surprise) //<-- Validação
+console.log(typeof z) //<-- Validação Number
 
-console.log(typeof age) //<-- Validação
+console.log(typeof true_or_false) //<-- Validação Boolean
+
+console.log(typeof surprise) //<-- Validação Object
+
+console.log(typeof age) //<-- Validação Undefined
+
+console.log(typeof lista) //<-- Validação Array
+
+console.log(typeof usuario) //<-- Validação Object literals
+
+// Métodos de string
