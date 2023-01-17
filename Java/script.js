@@ -302,3 +302,17 @@ title.textContent = 'Mudei o titúlo'  //Mudanado o conteúdo da variável
 texts[0].innerHTML = '<span>Atlterado com sucesso</span>'    //Alterando a estrutura do HTML juntamente com o texto
 
 texts[1].style.backgroundColor = 'red'    // Estilizando
+
+texts[2].classList.add('my-class')  //adicionando classes
+
+texts[2].classList.remove('text')
+
+texts[3].remove() //Removendo conteúdo do index
+
+//Eventos
+
+const btn = document.querySelector('#btn')
+
+btn.addEventListener('click', function(){
+    texts[2].style.color = 'blue'
+})
