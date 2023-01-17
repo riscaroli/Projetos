@@ -1,10 +1,10 @@
 // Console
 
-console.error("Este é o erro!")
+console.error('Este é o erro!')
 
-console.log("Meu nome é Gabriel!")
+console.log('Meu nome é Gabriel!')
 
-console.warn("Este é um aviso!")
+console.warn('Este é um aviso!')
 
 // Variáveis
 
@@ -18,7 +18,7 @@ const z = 20  //<-- Não muda de valor de preferência este
 
 // Tipos de dados
 
-const nome = "Gabriel"
+const nome = 'Gabriel'
 
 const true_or_false = true
 
@@ -26,9 +26,9 @@ let surprise = null
 
 let age //<-- Incorreto
 
-const lista = ["Gabriel","Crislei","Luciano"]
+const lista = ['Gabriel','Crislei','Luciano']
 
-const usuario = {email: "gabriel.riscarolli@unidavi.edu.br", password: "teste123", age: 30} //<-- Object literals
+const usuario = {email: 'gabriel.riscarolli@unidavi.edu.br', password: 'teste123', age: 30} //<-- Object literals
 
 console.log(typeof nome) //<-- Validação String
 
@@ -46,7 +46,7 @@ console.log(typeof usuario) //<-- Validação Object literals
 
 // Métodos de String
 
-const nome_completo = "Gabriel Ari Riscarolli"
+const nome_completo = 'Gabriel Ari Riscarolli'
 
 console.log(nome_completo.length)  //<-- Contagem de caractéries
 
@@ -54,11 +54,11 @@ console.log(nome_completo.toLocaleLowerCase())  // Muda a letra para minúscula
 
 console.log(nome_completo.toLocaleUpperCase())  // Muda a letra para maiúscula
 
-const nome_lista = nome_completo.split(" ")  //<-- Separação com caractéres
+const nome_lista = nome_completo.split(' ')  //<-- Separação com caractéres
 
 console.log(nome_lista)
 
-console.log(nome_completo.indexOf("Riscarolli"))  // Número de Caractéries até a palavra escrita
+console.log(nome_completo.indexOf('Riscarolli'))  // Número de Caractéries até a palavra escrita
 
 console.log(nome_completo.slice(0, 11)) // Extrair uma parte de uma string
 
@@ -93,12 +93,12 @@ list.unshift()  // Add o primeiro elemento
 // Objetos
 
 const produtos = {
-    Nome: "Kombi",
+    Nome: 'Kombi',
     Preço: 8000,
     Estoque: true, 
-    Ano: ["1970","1980","1990"],
+    Ano: ['1970','1980','1990'],
 }
-console.log(produtos.Nome) // Igual a console.log(produtos["Nome"])
+console.log(produtos.Nome) // Igual a console.log(produtos['Nome'])
 
 // Destructuring
 
@@ -111,7 +111,7 @@ console.log(Estoque)
 // JSON - JavaScript Object Notation 
 
 const dog = {
-    Name: "Shark", Age: 10
+    Name: 'Shark', Age: 10
 }
 const json = JSON.stringify(dog) // Coverter para JSON
 
@@ -124,23 +124,118 @@ console.log(obj)
 // Estruturas Condicionais 
 
 const a = 10
-const b = "Gabriel"
+const b = 'Gabriel'
 
 if(a > 9){
-    console.log("True")
+    console.log('True')
 }
 else{
-    console.log("False")
+    console.log('False')
 }
 
-// "==" Valor da Váriavel é igual e "===" Valor e tipo são identicos
+// '==' Valor da Váriavel é igual e '===' Valor e tipo são identicos
 
-if(b === "Marcos"){
-    console.log("True")
+if(b === 'Marcos'){
+    console.log('True')
 }
-else if(b === "Jonathan"){
-    console.log("True")
+else if(b === 'Jonathan'){
+    console.log('True')
 }
 else{
-    console.log("False")
+    console.log('False')
 }
+
+// IF ternário
+
+const somaNumero = 99
+
+let testeNumero = somaNumero > 20 ? 'Yes' : 'No'
+
+console.log(testeNumero)
+
+// Estruturas de repetição
+
+const mylist = [1, 2, 3, 4, 5]
+let counter = 0
+
+while(counter < mylist.length){
+    console.log('Imprimindo: '+mylist[counter])
+    counter++
+}
+
+const mylist2 = ['A','B','C','D','E']
+
+for(let counter = 0;counter < mylist2.length;counter++){
+    console.log('Imprimindo: '+mylist2[counter])
+}
+
+// Métodos de Arrays -> repetição
+
+const names = ['Pedro', 'Matheus', 'João', 'Gabriel']
+
+names.forEach(function (name) {
+    console.log(`O nome é ${name}`) // Usasse crase
+})
+
+const modifica = names.map(function(name){
+    if(name === 'Gabriel'){
+        return (name = 'Sr. Gabriel')
+    } else {
+        return name
+    }
+})
+console.log(modifica)
+
+const bolinha = [1,2,3,4,5, 10,100,1000].filter(function (number) {
+    return number >=5
+})
+console.log(bolinha)
+
+const soma = [10,20,30,40,50].reduce(function (total, number){
+    return total + number
+})
+console.log(soma)
+
+// Funções
+
+function minhafunction() {
+    console.log('Opa')
+}
+minhafunction() //chama a function
+
+function nomeC(nome, sobrenome) {
+    return `O nome completo é: ${nome} ${sobrenome}`
+}
+console.log(nomeC('Gabriel', 'Riscarolli'))
+
+const nome2 = 'Riscarolli'
+const nome1 = 'Luciano'
+
+const MeuNomeC = nomeC(nome1, nome2)
+
+console.log(MeuNomeC)
+
+// Arrows Functions
+
+const arrow = (a, b) => {
+    return a + b
+}
+console.log(arrow(2, 5))
+
+const simples = (a, b) => a + b    // Simplificado
+
+console.log(simples(5, 5))
+
+// Classes 
+
+class Elemento {
+    constructor(nome, preço){
+        this.nome = nome
+        this.preço = preço
+    }
+
+}
+const socks = new Elemento('Meias', 4.99)
+
+console.log(socks.nome)
+console.log(socks.preço)
