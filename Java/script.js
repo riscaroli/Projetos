@@ -233,9 +233,72 @@ class Elemento {
         this.nome = nome
         this.preço = preço
     }
+    dethalesElementos() {
+        return `O nome do produto é ${this.nome} e o preço é R$${this.preço}`      //<-- Usar crase para isso
+    }
 
 }
 const socks = new Elemento('Meias', 4.99)
+const shirt = new Elemento('Camisa Preta', 19.99)
 
 console.log(socks.nome)
 console.log(socks.preço)
+
+console.log(shirt.nome)
+console.log(shirt.preço)
+
+console.log(shirt.dethalesElementos())           //<-- Função com classes 
+console.log(socks.dethalesElementos())
+
+//  Herança de classes
+
+class SuperElemento extends Elemento{
+    constructor(nome, preço, estoque) {
+        super(nome, preço) //Para usar dados da classe pai
+        this.estoque = estoque
+    }
+    ver(adjetivo){
+        return `O ${this.nome} é muito ${adjetivo}`
+    }
+    //static methods   reproduzir fora de classes podendo usa-lo em variadas classes de um mesmo código
+    static opa(){
+        console.log('Opa')
+    }
+}
+const tenis = new SuperElemento('Air Jordan', 699.99, 20)
+console.log(tenis.estoque)
+console.log(tenis.ver('Bom'))
+SuperElemento.opa()
+
+//Front end com DOM
+
+const title = document.getElementById('title')   //pegar com id
+
+console.log(title)
+
+//query selector mais prático 
+
+const titulo = document.querySelector('#title')
+console.log(titulo)
+
+const texts = document.querySelectorAll('.text') //<-- Seleciona mais de um 
+
+console.log(texts)  //Aparece em forma de arrays
+
+console.log(texts[0])
+console.log(texts[1])
+console.log(texts[2])
+console.log(texts[3])
+console.log(texts[4])
+
+texts.forEach((text) => {
+    console.log(text.textContent)  //pode-se aplicar metódos de strings
+})
+
+//Mudando ou manipulando elementos
+
+title.textContent = 'Mudei o titúlo'  //Mudanado o conteúdo da variável
+
+texts[0].innerHTML = '<span>Atlterado com sucesso</span>'    //Alterando a estrutura do HTML juntamente com o texto
+
+texts[1].style.backgroundColor = 'red'    // Estilizando
